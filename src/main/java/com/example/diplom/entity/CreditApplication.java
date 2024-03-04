@@ -5,7 +5,7 @@ import lombok.Data;
 
 import java.util.Date;
 import java.util.UUID;
-
+/**kindmax63**/
 @Data
 @AllArgsConstructor
 public class CreditApplication {

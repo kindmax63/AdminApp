@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
-
+/**kindmax63**/
 @Service
 public class CreditApplicationService {
 private List<CreditApplication> creditApplications = new ArrayList<>();

@@ -4,6 +4,7 @@ import lombok.Data;
 
 import java.util.Date;
 import java.util.UUID;
+/**kindmax63**/
 @Data
 public class User {
     private UUID id;

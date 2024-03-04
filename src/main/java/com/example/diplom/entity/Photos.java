@@ -4,6 +4,7 @@ import lombok.Data;
 
 import java.time.LocalDate;
 import java.util.UUID;
+/**kindmax63**/
 @Data
 public class Photos {
     private UUID id;

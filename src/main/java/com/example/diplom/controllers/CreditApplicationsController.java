@@ -22,6 +22,7 @@ public class CreditApplicationsController {
         return "page-credit-applications";
     }
 
+
     @PostMapping ("/credit_application/change_status_approve/{id}")
     public String changeStatusCreditApplicationToApprove (@PathVariable UUID id){
         creditApplicationService.changeStatusToApprove(id);

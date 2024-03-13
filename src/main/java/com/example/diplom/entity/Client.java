@@ -44,9 +44,6 @@ public class Client {
     private String email_address;
     @Column(name = "mobile_number")
     private String mobile_number;
-    @Column(name = "tariff")
-    @OneToOne(optional = false, mappedBy="tariff_name")
-    private Tariff tariff;
     @Column(name = "photo_client_key_one")
     @OneToOne(optional = false, mappedBy="key")
     private Photos photo_client_key_one;

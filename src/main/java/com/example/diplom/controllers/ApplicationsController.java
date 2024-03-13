@@ -1,7 +1,6 @@
 package com.example.diplom.controllers;
 
-import com.example.diplom.entity.CreditApplication;
-import com.example.diplom.services.CreditApplicationService;
+import com.example.diplom.services.ApplicationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,36 +11,36 @@ import java.util.UUID;
 /**kindmax63**/
 @Controller
 @RequiredArgsConstructor
-public class CreditApplicationsController {
+public class ApplicationsController {
 
-    private final CreditApplicationService creditApplicationService;
+    private final ApplicationService applicationService;
 
     @GetMapping ("/")
     public String creditApplications(Model model){
-        model.addAttribute("creditApplications", creditApplicationService.listNewCreditApplications());
-        return "page-credit-applications";
+        model.addAttribute("applications", applicationService.listNewCreditApplications());
+        return "page-applications";
     }
 
 
-    @PostMapping ("/credit_application/change_status_approve/{id}")
+    @PostMapping ("/application/change_status_approve/{id}")
     public String changeStatusCreditApplicationToApprove (@PathVariable UUID id){
-        creditApplicationService.changeStatusToApprove(id);
+        applicationService.changeStatusToApprove(id);
         return "redirect:/";
     }
 
-    @PostMapping ("/credit_application/change_status_decline/{id}")
+    @PostMapping ("/application/change_status_decline/{id}")
     public String changeStatusCreditApplicationToDecline (@PathVariable UUID id){
-        creditApplicationService.changeStatusToDecline(id);
+        applicationService.changeStatusToDecline(id);
         return "redirect:/";
     }
 
-    @PostMapping ("/credit_application/change_status_incorrect/{id}")
+    @PostMapping ("/application/change_status_incorrect/{id}")
     public String changeStatusCreditApplicationToIncorrect (@PathVariable UUID id){
-        creditApplicationService.changeStatusToIncorrectPhotos (id);
+        applicationService.changeStatusToIncorrectPhotos (id);
         return "redirect:/";
     }
 
-    @GetMapping ("/credit_application/{photos_user}")
+    @GetMapping ("/application/{photos_user}")
     public String photosUser (UUID id){
         return "";
     }

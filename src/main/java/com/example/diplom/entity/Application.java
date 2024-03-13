@@ -4,20 +4,16 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.Type;
 
 import java.util.Date;
 import java.util.UUID;
-import com.example.diplom.entity.Client;
-import com.example.diplom.entity.Photos;
 
 @Entity
-@Table(name = "credit_apllication")
+@Table(name = "application")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CreditApplication {
+public class Application {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
@@ -39,4 +35,7 @@ public class CreditApplication {
     @OneToOne(optional = false, mappedBy="key")
     @Column(name = "photos_client_two")
     private Photos photos_client_two;
+    @Column(name = "tariff")
+    @OneToOne(optional = false, mappedBy="tariff_name")
+    private Tariff tariff;
 }

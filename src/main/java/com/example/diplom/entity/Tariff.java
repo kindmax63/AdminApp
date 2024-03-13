@@ -1,12 +1,10 @@
 package com.example.diplom.entity;
 
-import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
 import java.util.UUID;
 
 @Entity
@@ -21,4 +19,6 @@ public class Tariff{
     private UUID id;
     @Column(name = "tariff_name")
     private String tariff_name;
+    @Column(name = "tariff_sum")
+    private int tariff_sum;
 }

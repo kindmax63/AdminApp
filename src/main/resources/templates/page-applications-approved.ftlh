@@ -13,14 +13,14 @@
     </ul>
 </div>
 <h2>Все одобренные заявки</h2>
-<#list creditApplications as creditApplication>
+<#list application as application>
 <div>
-    <p><b>${creditApplication.status}</b> ${creditApplication} | <a href="">Ссылка на фотографии</a> | <a href="">Данные пользователя</a></p>
+    <p><b>${application.status}</b> ${application} | <a href="">Ссылка на фотографии</a> | <a href="">Данные пользователя</a></p>
 </div>
 <hr>
 </#list>
 
-<!--<form action="/creditApplication/create" method="post">
+<!--<form action="/application/create" method="post">
     <h3>Создать заявку</h3>
     Имя: <input type = "text" name = "first_name"/><br><br>
     Фамилия: <input type = "text" name = "second_name"/><br><br>

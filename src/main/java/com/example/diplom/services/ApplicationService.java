@@ -1,25 +1,21 @@
 package com.example.diplom.services;
 
-import com.example.diplom.entity.CreditApplication;
+import com.example.diplom.entity.Application;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 /**kindmax63**/
 @Service
-public class CreditApplicationService {
+public class ApplicationService {
 
 
-    public List<CreditApplication> listNewCreditApplications() {
-        return creditApplications;
+    public List<Application> listNewCreditApplications() {
+        return applications;
     }
 
     public void changeStatusToApprove (UUID id) {
-        for (CreditApplication creditApplication: creditApplications) {
+        for (Application creditApplication: applications) {
             if (creditApplication.getId().equals(id)) {
                 creditApplication.setStatus("APPROVE");
             }
@@ -27,7 +23,7 @@ public class CreditApplicationService {
     }
 
     public void changeStatusToDecline (UUID id) {
-        for (CreditApplication creditApplication: creditApplications) {
+        for (Application creditApplication: applications) {
             if (creditApplication.getId().equals(id)) {
                 creditApplication.setStatus("DECLINE");
             }
@@ -35,15 +31,15 @@ public class CreditApplicationService {
     }
 
     public void changeStatusToIncorrectPhotos (UUID id) {
-        for (CreditApplication creditApplication: creditApplications) {
+        for (Application creditApplication: applications) {
             if (creditApplication.getId().equals(id)) {
                 creditApplication.setStatus("INCORRECT_PHOTOS");
             }
         }
     }
 
-    public CreditApplication getCreditApplicationById (UUID id){
-        for (CreditApplication creditApplication: creditApplications){
+    public Application getCreditApplicationById (UUID id){
+        for (Application creditApplication: applications){
             if (creditApplication.getId().equals(id)){
                 return creditApplication;
             }

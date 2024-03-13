@@ -12,12 +12,7 @@ import java.util.UUID;
 /**kindmax63**/
 @Service
 public class CreditApplicationService {
-private List<CreditApplication> creditApplications = new ArrayList<>();
-Date testDate = new Date();
-    {
-        creditApplications.add(new CreditApplication(UUID.randomUUID(),"WAITING", testDate,testDate,testDate,"1","max","linkPhotos"));
-        creditApplications.add(new CreditApplication(UUID.randomUUID(),"WAITING", testDate,testDate,testDate,"2","sergei","linkPhotos"));
-    }
+
 
     public List<CreditApplication> listNewCreditApplications() {
         return creditApplications;

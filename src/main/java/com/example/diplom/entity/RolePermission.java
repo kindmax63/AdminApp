@@ -18,10 +18,10 @@ public class RolePermission {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private UUID id;
-    @OneToOne(optional = false, mappedBy="id")
-    @Column(name = "permission_id")
+    @OneToOne
+    @JoinColumn(name = "permission_id")
     private Permission permission_id;
-    @OneToOne(optional = false, mappedBy="id")
-    @Column(name = "role_id")
+    @OneToOne
+    @JoinColumn(name = "role_id")
     private Role role_id;
 }

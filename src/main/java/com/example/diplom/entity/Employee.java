@@ -35,7 +35,7 @@ public class Employee {
     private String password;
     @Column(name = "name")
     private String name;
-    @OneToOne(optional = false, mappedBy="id")
-    @Column(name = "role_id")
+    @OneToOne
+    @JoinColumn(name = "role_id")
     private Role role_id;
 }

@@ -20,8 +20,8 @@ public class Offer {
     private UUID id;
     @Column(name = "type")
     private String type;
-    @OneToOne(optional = false, mappedBy="id")
-    @Column(name = "application_id")
+    @OneToOne
+    @JoinColumn(name = "application_id")
     private Application application_id;
     @Column(name = "name_file_offer")
     private String name_file_offer;

@@ -8,11 +8,13 @@
 <div>
     <ul>
         <li><a href="">Все заявки</a></li>
-        <li><a href="">Одобренные заявки</a></li>
+        <li><a href="">Кредиты</a></li>
         <li><a href="">Клиенты</a></li>
+        <li><a href="">Фотографии клиентов</a></li>
+        <li><a href="">Андеррайтинг</a></li>
     </ul>
 </div>
-<h2>Все одобренные заявки</h2>
+<h2>Кредиты</h2>
 <#list application as application>
 <div>
     <p><b>${application.state}</b> ${application} | <a href="">Ссылка на фотографии</a> | <a href="">Данные пользователя</a></p>

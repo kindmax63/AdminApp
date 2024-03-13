@@ -14,22 +14,7 @@
         <li><a href="">Андеррайтинг</a></li>
     </ul>
 </div>
-<h2>Все заявки</h2>
-<#list applications as application>
-<div>
-    <p><b>${application.state}</b> ${application} | <a href="">Ссылка на фотографии</a> | <a href="">Данные пользователя</a></p>
-</div>
-<hr>
-<form action="/application/change_status_approve/${application.id}" method="post">
-    <input type="submit" value = "Одобрить"/>
-</form>
-<form action="/application/change_status_decline/${application.id}" method="post">
-    <input type="submit" value = "Отказать"/>
-</form>
-<form action="/application/change_status_incorrect/${application.id}" method="post">
-    <input type="submit" value = "Неподходящие фото"/>
-</form>
-</#list>
+<h2>Андеррайтинг</h2>
 
 
 

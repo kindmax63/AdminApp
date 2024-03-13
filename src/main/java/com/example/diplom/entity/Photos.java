@@ -19,11 +19,11 @@ public class Photos {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private UUID id;
-    @OneToOne(optional = false, mappedBy="id")
-    @Column(name = "client_id")
+    @OneToOne
+    @JoinColumn(name = "client_id")
     private Client client_id;
-    @OneToOne(optional = false, mappedBy="id")
-    @Column(name = "application_id")
+    @OneToOne
+    @JoinColumn(name = "application_id")
     private Application application_id;
     @Column(name = "status")
     private String status;

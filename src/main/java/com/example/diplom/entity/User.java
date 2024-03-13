@@ -25,4 +25,7 @@ public class User {
     private String login;
     @Column(name = "password")
     private String password;
+    @OneToOne
+    @JoinColumn(name = "role_id")
+    private Role role_id;
 }

@@ -14,26 +14,22 @@ import java.util.UUID;
 public class ApplicationsController {
 
     private final ApplicationService applicationService;
-
     @GetMapping ("/")
     public String applications(Model model){
-        model.addAttribute("applications", applicationService.listNewApplications());
+        model.addAttribute("applications", applicationService.listApplications());
         return "page-applications";
     }
-
 
     @PostMapping ("/application/change_status_approve/{id}")
     public String changeStatusApplicationToApprove (@PathVariable UUID id){
         applicationService.changeStatusToApprove(id);
         return "redirect:/";
     }
-
     @PostMapping ("/application/change_status_decline/{id}")
     public String changeStatusApplicationToDecline (@PathVariable UUID id){
         applicationService.changeStatusToDecline(id);
         return "redirect:/";
     }
-
     @PostMapping ("/application/change_status_incorrect/{id}")
     public String changeStatusApplicationToIncorrect (@PathVariable UUID id){
         applicationService.changeStatusToIncorrectPhotos (id);

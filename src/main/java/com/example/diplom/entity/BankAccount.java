@@ -22,7 +22,7 @@ public class BankAccount {
     private String name;
     @Column(name = "account")
     private String account;
-    @OneToOne(optional = false, mappedBy="id")
-    @Column(name = "client_id")
+    @OneToOne
+    @JoinColumn(name = "client_id")
     private Client client_id;
 }

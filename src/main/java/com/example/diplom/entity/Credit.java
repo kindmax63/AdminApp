@@ -19,17 +19,17 @@ public class Credit {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private UUID id;
-    @OneToOne(optional = false, mappedBy="id")
-    @Column(name = "client_id")
+    @OneToOne
+    @JoinColumn(name = "client_id")
     private Client client_id;
-    @OneToOne(optional = false, mappedBy="id")
-    @Column(name = "application_id")
+    @OneToOne
+    @JoinColumn(name = "application_id")
     private Application application_id;
-    @OneToOne(optional = false, mappedBy="id")
-    @Column(name = "offer_id")
+    @OneToOne
+    @JoinColumn(name = "offer_id")
     private Offer offer_id;
-    @OneToOne(optional = false, mappedBy="id")
-    @Column(name = "tariff_id")
+    @OneToOne
+    @JoinColumn(name = "tariff_id")
     private Tariff tariff_id;
     @Column(name = "state")
     private String state;

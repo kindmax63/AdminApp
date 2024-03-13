@@ -16,26 +16,26 @@ public class ApplicationsController {
     private final ApplicationService applicationService;
 
     @GetMapping ("/")
-    public String creditApplications(Model model){
-        model.addAttribute("applications", applicationService.listNewCreditApplications());
+    public String applications(Model model){
+        model.addAttribute("applications", applicationService.listNewApplications());
         return "page-applications";
     }
 
 
     @PostMapping ("/application/change_status_approve/{id}")
-    public String changeStatusCreditApplicationToApprove (@PathVariable UUID id){
+    public String changeStatusApplicationToApprove (@PathVariable UUID id){
         applicationService.changeStatusToApprove(id);
         return "redirect:/";
     }
 
     @PostMapping ("/application/change_status_decline/{id}")
-    public String changeStatusCreditApplicationToDecline (@PathVariable UUID id){
+    public String changeStatusApplicationToDecline (@PathVariable UUID id){
         applicationService.changeStatusToDecline(id);
         return "redirect:/";
     }
 
     @PostMapping ("/application/change_status_incorrect/{id}")
-    public String changeStatusCreditApplicationToIncorrect (@PathVariable UUID id){
+    public String changeStatusApplicationToIncorrect (@PathVariable UUID id){
         applicationService.changeStatusToIncorrectPhotos (id);
         return "redirect:/";
     }

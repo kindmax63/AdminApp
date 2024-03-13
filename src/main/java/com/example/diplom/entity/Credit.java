@@ -5,16 +5,16 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.UUID;
-/**kindmax63**/
+
 @Entity
-@Table(name = "photos")
+@Table(name = "credits")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Photos {
+public class Credit {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
@@ -25,18 +25,28 @@ public class Photos {
     @OneToOne(optional = false, mappedBy="id")
     @Column(name = "application_id")
     private Application application_id;
-    @Column(name = "status")
-    private String status;
-    @Column(name = "name_file_photo")
-    private String name_file_photo;
-    @Column(name = "key")
-    private String key;
-    @Column(name = "comment")
-    private String comment;
+    @OneToOne(optional = false, mappedBy="id")
+    @Column(name = "offer_id")
+    private Offer offer_id;
+    @OneToOne(optional = false, mappedBy="id")
+    @Column(name = "tariff_id")
+    private Tariff tariff_id;
+    @Column(name = "state")
+    private String state;
+    @Column(name = "dpd")
+    private int dpd;
+    @Column(name = "amount")
+    private BigDecimal amount;
+    @Column(name = "period")
+    private int period;
+    @Column(name = "total_debt")
+    private BigDecimal total_debt;
+    @Column(name = "repayment_date")
+    private Date repayment_date;
     @Column(name = "created_at")
     private Date created_at;
     @Column(name = "updated_at")
     private Date updated_at;
-    @Column(name = "reason")
-    private String reason;
+    @Column(name = "closed_at")
+    private Date closed_at;
 }

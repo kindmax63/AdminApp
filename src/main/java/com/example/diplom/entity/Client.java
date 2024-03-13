@@ -18,18 +18,52 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private UUID id;
-    @Column(name = "date_create")
-    private Date date_create;
-    @Column(name = "login")
-    private String login;
     @Column(name = "first_name")
     private String first_name;
-    @Column(name = "middle_name")
-    private String middle_name;
-    @Column(name = "second_name")
-    private String second_name;
-    @Column(name = "date_birtday")
-    private Date date_birtday;
+    @Column(name = "patronymic")
+    private String patronymic;
+    @Column(name = "surname")
+    private String surname;
+    @Column(name = "sex")
+    private String sex;
+    @Column(name = "birthday")
+    private Date birthday;
+    @Column(name = "social_status")
+    private String social_status;
+    @Column(name = "salary")
+    private int salary;
+    @Column(name = "created_at")
+    private Date created_at;
+    @Column(name = "updated_at")
+    private Date updated_at;
+    @Column(name = "employment_status")
+    private String employment_status;
+    @Column(name = "job_position")
+    private String job_position;
+    @Column(name = "length_of_work")
+    private String length_of_work;
+    @Column(name = "company_address")
+    private String company_address;
+    @Column(name = "working_industry")
+    private String working_industry;
+    @Column(name = "city")
+    private String city;
+    @Column(name = "district")
+    private String district;
+    @Column(name = "street")
+    private String street;
+    @Column(name = "house")
+    private String house;
+    @Column(name = "appartment")
+    private String appartment;
+    @Column(name = "marriage_status")
+    private String marriage_status;
+    @Column(name = "document_type")
+    private String document_type;
+    @Column(name = "document_number")
+    private String document_number;
+    @Column(name = "number_of_children")
+    private int number_of_children;
     @Column(name = "passport_series")
     private String passport_series;
     @Column(name = "passport_number")
@@ -38,16 +72,8 @@ public class Client {
     private String passport_who_issued;
     @Column(name = "passport_when_issued")
     private String passport_when_issued;
-    @Column(name = "registration_address")
-    private String registration_address;
     @Column(name = "email_address")
     private String email_address;
     @Column(name = "mobile_number")
     private String mobile_number;
-    @Column(name = "photo_client_key_one")
-    @OneToOne(optional = false, mappedBy="key")
-    private Photos photo_client_key_one;
-    @Column(name = "photo_client_key_two")
-    @OneToOne(optional = false, mappedBy="key")
-    private Photos photo_client_key_two;
 }

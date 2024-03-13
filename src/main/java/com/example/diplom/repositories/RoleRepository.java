@@ -1,9 +1,9 @@
 package com.example.diplom.repositories;
 
-import com.example.diplom.entity.User;
+import com.example.diplom.entity.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;
 
-public interface UserRepository extends JpaRepository <User, UUID> {
+public interface RoleRepository extends JpaRepository <Role, UUID> {
 }

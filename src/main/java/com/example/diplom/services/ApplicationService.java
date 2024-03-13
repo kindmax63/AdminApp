@@ -9,41 +9,36 @@ import java.util.UUID;
 @Service
 public class ApplicationService {
 
-
-    public List<Application> listNewCreditApplications() {
-        return applications;
+    public List<Application> listNewApplications() {
+        return null;
     }
 
     public void changeStatusToApprove (UUID id) {
-        for (Application creditApplication: applications) {
+       /* for (Application creditApplication: applications) {
             if (creditApplication.getId().equals(id)) {
                 creditApplication.setStatus("APPROVE");
             }
-        }
+        }*/
     }
 
     public void changeStatusToDecline (UUID id) {
-        for (Application creditApplication: applications) {
+        /*for (Application creditApplication: applications) {
             if (creditApplication.getId().equals(id)) {
                 creditApplication.setStatus("DECLINE");
             }
-        }
+        }*/
     }
 
     public void changeStatusToIncorrectPhotos (UUID id) {
-        for (Application creditApplication: applications) {
+        /*for (Application creditApplication: applications) {
             if (creditApplication.getId().equals(id)) {
                 creditApplication.setStatus("INCORRECT_PHOTOS");
             }
-        }
+        }*/
     }
 
-    public Application getCreditApplicationById (UUID id){
-        for (Application creditApplication: applications){
-            if (creditApplication.getId().equals(id)){
-                return creditApplication;
-            }
-        }
+    public Application getApplicationById (UUID id){
+
       return null;
     }
 

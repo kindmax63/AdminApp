@@ -15,7 +15,7 @@
 <h2>Все заявки</h2>
 <#list applications as application>
 <div>
-    <p><b>${application.status}</b> ${application} | <a href="">Ссылка на фотографии</a> | <a href="">Данные пользователя</a></p>
+    <p><b>${application.state}</b> ${application} | <a href="">Ссылка на фотографии</a> | <a href="">Данные пользователя</a></p>
 </div>
 <hr>
 <form action="/application/change_status_approve/${application.id}" method="post">

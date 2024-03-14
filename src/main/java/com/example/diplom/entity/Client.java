@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
 
 import java.util.Date;
 import java.util.UUID;
@@ -32,8 +33,10 @@ public class Client {
     private String social_status;
     @Column(name = "salary")
     private int salary;
+    @CreatedDate
     @Column(name = "created_at")
     private Date created_at;
+    @CreatedDate
     @Column(name = "updated_at")
     private Date updated_at;
     @Column(name = "employment_status")

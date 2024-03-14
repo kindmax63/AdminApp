@@ -4,13 +4,14 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
 
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.UUID;
 
 @Entity
-@Table(name = "application")
+@Table(name = "applications")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -39,8 +40,10 @@ public class Application {
     @OneToOne
     @JoinColumn(name = "offer_id")
     private Offer offer_id;
+    @CreatedDate
     @Column(name = "created_at")
     private Date created_at;
+    @CreatedDate
     @Column(name = "updated_at")
     private Date updated_at;
     @OneToOne

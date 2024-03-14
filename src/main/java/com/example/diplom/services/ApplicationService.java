@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
-/**kindmax63**/
+
 @Service
 @Slf4j
 @RequiredArgsConstructor
@@ -17,6 +17,10 @@ public class ApplicationService {
 
     public List<Application> listApplications() {
         return applicationRepository.findAll();
+    }
+
+    public void createApplication (Application application) {
+       applicationRepository.save(application);
     }
 
     public void changeStatusToApprove (UUID id) {
@@ -35,7 +39,7 @@ public class ApplicationService {
         }
     }
 
-    public void changeStatusToIncorrectPhotos (UUID id) {
+    public void changeStatusToCancel (UUID id) {
         for (Application creditApplication: applicationRepository.findAll()) {
             if (creditApplication.getId().equals(id)) {
                 creditApplication.setState("CANCEL");
@@ -43,8 +47,8 @@ public class ApplicationService {
         }
     }
 
-    public Application getApplicationById (UUID id){
+  /*  public Application getApplicationById (UUID id){
       return null;
-    }
+    }*/
 
 }

@@ -9,7 +9,7 @@
     <ul>
         <li><a href="">Все заявки</a></li>
         <li><a href="">Кредиты</a></li>
-        <li><a href="">Клиенты</a></li>
+        <li><a href="/clients">Клиенты</a></li>
         <li><a href="">Фотографии клиентов</a></li>
         <li><a href="">Андеррайтинг</a></li>
     </ul>

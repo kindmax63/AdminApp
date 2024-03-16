@@ -1,29 +1,25 @@
 package com.example.diplom.services;
 
 
-import com.example.diplom.entity.Application;
 import com.example.diplom.entity.Client;
+import com.example.diplom.entity.Credit;
 import com.example.diplom.repositories.ClientRepository;
+import com.example.diplom.repositories.CreditRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.UUID;
 
 @Service
 @Slf4j
 @RequiredArgsConstructor
-public class ClientService {
+public class CreditService {
 
-    private final ClientRepository clientRepository;
+    private final CreditRepository creditRepository;
 
-    public List<Client> listClients() {
-        return clientRepository.findAll();
-    }
-
-    public void createClient (Client client) {
-        clientRepository.save(client);
+    public List<Credit> listCredits() {
+        return creditRepository.findAll();
     }
 
 }

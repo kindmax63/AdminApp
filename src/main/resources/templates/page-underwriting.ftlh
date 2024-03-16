@@ -7,23 +7,38 @@
 <body>
 <div>
     <ul>
-        <li><a href="">Все заявки</a></li>
-        <li><a href="">Кредиты</a></li>
+        <li><a href="/">Все заявки</a></li>
+        <li><a href="/credits">Кредиты</a></li>
         <li><a href="/clients">Клиенты</a></li>
-        <li><a href="">Фотографии клиентов</a></li>
-        <li><a href="">Андеррайтинг</a></li>
+        <li><a href="/photos">Фотографии клиентов</a></li>
+        <li><a href="/underwriting">Андеррайтинг</a></li>
     </ul>
 </div>
 <h2>Андеррайтинг</h2>
+<hr>
+<#list applications as application>
+    <div>
+        <p> ${application} | <a href="">Ссылка на фотографии</a> | <a href="">Данные пользователя</a></p>
+    </div>
+    <hr>
+    <form action="/underwriting/change_status_approve/${application.id}" method="post">
+        <input type="submit" value = "Одобрить"/>
+    </form>
+    <form action="/underwriting/change_status_decline/${application.id}" method="post">
+        <input type="submit" value = "Отказать"/>
+        Причина отказа: <input type = "text" name = "reject_reason"/><br><br>
+    </form>
+    <form action="/underwriting/change_status_cancel/${application.id}" method="post">
+        <input type="submit" value = "Отменить"/>
+        Причина отмены: <input type = "text" name = "reject_reason"/><br><br>
+    </form>
+    <form action="/underwriting/change_employee/${application.id}" method="post">
+        <input type="submit" value = "Назначить ответственного"/>
+        Сотрудник: <input type = "text" name = "employee_id"/><br><br>
+    </form>
+</#list>
+<hr>
 
-
-
-<!--<form action="/application/create" method="post">
-    <h3>Создать заявку</h3>
-    Имя: <input type = "text" name = "first_name"/><br><br>
-    Фамилия: <input type = "text" name = "second_name"/><br><br>
-    <input type="submit" value = "Отправить заявку"/>
-</form>-->
 
 </body>
 </html>

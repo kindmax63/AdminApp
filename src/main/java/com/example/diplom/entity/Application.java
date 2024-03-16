@@ -35,7 +35,7 @@ public class Application {
     @Column(name = "period")
     private int period;
     @OneToOne
-    @JoinColumn(name = "account__id")
+    @JoinColumn(name = "account_id")
     private BankAccount account_id;
     @OneToOne
     @JoinColumn(name = "offer_id")

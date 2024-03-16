@@ -23,30 +23,6 @@ public class ApplicationService {
        applicationRepository.save(application);
     }
 
-    public void changeStatusToApprove (UUID id) {
-        for (Application creditApplication: applicationRepository.findAll()) {
-            if (creditApplication.getId().equals(id)) {
-                creditApplication.setState("APPROVE");
-            }
-        }
-    }
-
-    public void changeStatusToDecline (UUID id) {
-        for (Application creditApplication: applicationRepository.findAll()) {
-            if (creditApplication.getId().equals(id)) {
-                creditApplication.setState("DECLINE");
-            }
-        }
-    }
-
-    public void changeStatusToCancel (UUID id) {
-        for (Application creditApplication: applicationRepository.findAll()) {
-            if (creditApplication.getId().equals(id)) {
-                creditApplication.setState("CANCEL");
-            }
-        }
-    }
-
   /*  public Application getApplicationById (UUID id){
       return null;
     }*/

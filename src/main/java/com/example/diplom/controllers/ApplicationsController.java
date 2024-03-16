@@ -21,27 +21,6 @@ public class ApplicationsController {
         return "page-applications";
     }
 
-    @PostMapping ("/application/create")
-    public String createApplication (Application application){
-        applicationService.createApplication(application);
-        return "redirect:/";
-    }
-
-    @PostMapping ("/application/change_status_approve/{id}")
-    public String changeStatusApplicationToApprove (@PathVariable UUID id){
-        applicationService.changeStatusToApprove(id);
-        return "redirect:/";
-    }
-    @PostMapping ("/application/change_status_decline/{id}")
-    public String changeStatusApplicationToDecline (@PathVariable UUID id){
-        applicationService.changeStatusToDecline(id);
-        return "redirect:/";
-    }
-    @PostMapping ("/application/change_status_cancel/{id}")
-    public String changeStatusApplicationToIncorrect (@PathVariable UUID id){
-        applicationService.changeStatusToCancel(id);
-        return "redirect:/";
-    }
 
    /* @GetMapping ("/application/{photos_user}")
     public String photosUser (UUID id){

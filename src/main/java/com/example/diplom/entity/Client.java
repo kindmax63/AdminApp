@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 import java.util.UUID;
@@ -27,6 +28,7 @@ public class Client {
     private String surname;
     @Column(name = "sex")
     private String sex;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "birthday")
     private Date birthday;
     @Column(name = "social_status")
@@ -61,10 +63,12 @@ public class Client {
     private String appartment;
     @Column(name = "marriage_status")
     private String marriage_status;
-    @Column(name = "document_type")
-    private String document_type;
-    @Column(name = "document_number")
-    private String document_number;
+    @OneToOne
+    @JoinColumn(name = "document_type")
+    private Offer document_type;
+    @OneToOne
+    @JoinColumn(name = "document_number")
+    private Offer document_number;
     @Column(name = "number_of_children")
     private int number_of_children;
     @Column(name = "passport_series")

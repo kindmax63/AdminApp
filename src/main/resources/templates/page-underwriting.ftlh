@@ -34,7 +34,7 @@
     </form>
     <form action="/underwriting/change_employee/${application.id}" method="post">
         <input type="submit" value = "Назначить ответственного"/>
-        Сотрудник: <input type = "text" name = "employee_id"/><br><br>
+        Сотрудник: <input type = "text" value="" name = "employee_id"/><br><br>
     </form>
 </#list>
 <hr>

@@ -5,7 +5,10 @@ import com.example.diplom.entity.Application;
 import com.example.diplom.repositories.ApplicationRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.UUID;
@@ -21,10 +24,12 @@ public class UnderwritingService {
         return applicationRepository.findAll();
     }
 
+    @Transactional
     public void changeStatusToApprove (UUID id) {
         for (Application creditApplication: applicationRepository.findAll()) {
             if (creditApplication.getId().equals(id)) {
                 creditApplication.setState("APPROVE");
+                applicationRepository.save(creditApplication);
             }
         }
     }
@@ -33,6 +38,7 @@ public class UnderwritingService {
         for (Application creditApplication: applicationRepository.findAll()) {
             if (creditApplication.getId().equals(id)) {
                 creditApplication.setState("DECLINE");
+                applicationRepository.save(creditApplication);
             }
         }
     }
@@ -41,8 +47,11 @@ public class UnderwritingService {
         for (Application creditApplication: applicationRepository.findAll()) {
             if (creditApplication.getId().equals(id)) {
                 creditApplication.setState("CANCEL");
+                applicationRepository.save(creditApplication);
             }
         }
     }
+
+
 
 }

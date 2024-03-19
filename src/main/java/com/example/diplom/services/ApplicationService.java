@@ -19,6 +19,7 @@ public class ApplicationService {
         return applicationRepository.findAll();
     }
 
+
     public void createApplication (Application application) {
        applicationRepository.save(application);
     }

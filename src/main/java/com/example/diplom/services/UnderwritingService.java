@@ -5,8 +5,6 @@ import com.example.diplom.entity.Application;
 import com.example.diplom.repositories.ApplicationRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -33,7 +31,6 @@ public class UnderwritingService {
             }
         }
     }
-
     public void changeStatusToDecline (UUID id) {
         for (Application creditApplication: applicationRepository.findAll()) {
             if (creditApplication.getId().equals(id)) {
@@ -47,6 +44,15 @@ public class UnderwritingService {
         for (Application creditApplication: applicationRepository.findAll()) {
             if (creditApplication.getId().equals(id)) {
                 creditApplication.setState("CANCEL");
+                applicationRepository.save(creditApplication);
+            }
+        }
+    }
+
+    public void changeRejectReason (UUID id, String reason) {
+        for (Application creditApplication: applicationRepository.findAll()) {
+            if (creditApplication.getId().equals(id)) {
+                creditApplication.setReject_reason(reason);
                 applicationRepository.save(creditApplication);
             }
         }

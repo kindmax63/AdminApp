@@ -26,15 +26,17 @@
     </form>
     <form action="/underwriting/change_status_decline/${application.id}" method="post">
         <input type="submit" value = "Отказать"/>
-        Причина отказа: <input type = "text" name = "reject_reason"/><br><br>
     </form>
     <form action="/underwriting/change_status_cancel/${application.id}" method="post">
         <input type="submit" value = "Отменить"/>
-        Причина отмены: <input type = "text" name = "reject_reason"/><br><br>
+    </form>
+    <form action="/underwriting/change_reject_reason/${application.id}" method="post">
+        Причина отказа: <input type = "text" name = "reject_reason"/><br><br>
+        <input type="submit" value = "Сохранить причину"/>
     </form>
     <form action="/underwriting/change_employee/${application.id}" method="post">
         <input type="submit" value = "Назначить ответственного"/>
-        Сотрудник: <input type = "text" value="" name = "employee_id"/><br><br>
+        Сотрудник: <input type="text" value="" name = "employee_id"/><br><br>
     </form>
 </#list>
 <hr>

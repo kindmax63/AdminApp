@@ -36,4 +36,10 @@ public class UnderwritingController {
         return "redirect:/underwriting";
     }
 
+    @PostMapping ("/underwriting/change_reject_reason/{id}")
+    public String changeApplicationRejectReason (@PathVariable UUID id, @RequestParam String reject_reason){
+        underwritingService.changeRejectReason(id,reject_reason);
+        return "redirect:/underwriting";
+    }
+
 }

@@ -22,7 +22,7 @@ public class BankAccount {
     private String name;
     @Column(name = "account")
     private String account;
-    @OneToOne
+    @OneToOne (cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     @JoinColumn(name = "client_id")
     private Client client_id;
 }

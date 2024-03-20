@@ -19,10 +19,10 @@ public class Photos {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private UUID id;
-    @OneToOne
+    @ManyToOne (fetch = FetchType.EAGER)
     @JoinColumn(name = "client_id")
     private Client client_id;
-    @OneToOne
+    @ManyToOne (fetch = FetchType.EAGER)
     @JoinColumn(name = "application_id")
     private Application application_id;
     @Column(name = "status")

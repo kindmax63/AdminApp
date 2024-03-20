@@ -34,10 +34,10 @@ public class Application {
     private BigDecimal amount;
     @Column(name = "period")
     private int period;
-    @OneToOne
+    @OneToOne (cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     @JoinColumn(name = "account_id")
     private BankAccount account_id;
-    @OneToOne
+    @OneToOne (cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     @JoinColumn(name = "offer_id")
     private Offer offer_id;
     @CreatedDate
@@ -46,17 +46,17 @@ public class Application {
     @CreatedDate
     @Column(name = "updated_at")
     private Date updated_at;
-    @OneToOne
+    @OneToOne (cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     @JoinColumn(name = "employee_id")
     private Employee employee_id;
-    @OneToOne
+    @OneToOne (cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     @JoinColumn(name = "tariff_id")
     private Tariff tariff_id;
     @Column(name = "reject_reason")
     private String reject_reason;
     @Column(name = "approved_at")
     private Date approved_at;
-    @OneToOne
+    @OneToOne (fetch = FetchType.EAGER)
     @JoinColumn(name = "client_id")
     private Client client;
 }

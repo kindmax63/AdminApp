@@ -1,5 +1,6 @@
 package com.example.diplom.controllers;
 
+import com.example.diplom.repositories.PhotosRepository;
 import com.example.diplom.services.PhotoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -16,9 +17,12 @@ public class PhotosController {
 
     private final PhotoService photoService;
 
+    private final PhotosRepository photosRepository;
+
     @GetMapping("/photos")
     public String photos(Model model){
         model.addAttribute("photos", photoService.listPhotos());
+
         return "page-photos";
     }
 

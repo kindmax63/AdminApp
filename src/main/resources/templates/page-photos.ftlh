@@ -18,7 +18,7 @@
 <hr>
 <#list photos as photo>
     <div>
-        <p> ${photo} | <a href="/client_photos/${photo.id}">Ссылка на фотографию</a> </p>
+        <p> ${photo.id} </p> <img src="/photos/${photo.id}">
     </div>
     <hr>
     <form action="/photos/change_status_approve/${photo.id}" method="post">

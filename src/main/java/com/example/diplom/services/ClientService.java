@@ -15,7 +15,6 @@ import java.util.UUID;
 @Slf4j
 @RequiredArgsConstructor
 public class ClientService {
-
     private final ClientRepository clientRepository;
 
     public List<Client> listClients() {
@@ -25,5 +24,4 @@ public class ClientService {
     public void createClient (Client client) {
         clientRepository.save(client);
     }
-
 }
